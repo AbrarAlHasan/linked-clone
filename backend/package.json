@@ -5,16 +5,31 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"concurrently \"npx tsc -w\"  \"nodemon lib/index.js\""
+    "dev": "concurrently \"npx tsc -w\"  \"nodemon lib/index.js\"",
+    "linter": "eslint './src/**/*.{ts,js}'",
+    "prettier": "prettier --write './src/**/*.{ts,js}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^8.2.2",
+    "eslint-config-prettier": "^9.1.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "@eslint/js": "^8.57.0",
+    "eslint": "^8.57.0",
+    "globals": "^15.1.0",
+    "nodemon": "^3.1.0",
+    "typescript-eslint": "^7.7.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write './src/**/*.{ts,js}'",
+      "eslint './src/**/*.{ts,js}'"
+    ]
   }
 }

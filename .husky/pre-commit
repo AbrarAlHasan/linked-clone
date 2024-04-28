@@ -1,1 +1,2 @@
-npm run pre-commit
+npm run pre-commit-mobile-app
+npm run pre-commit-backend

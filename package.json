@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "cd mobile-app && npx lint-staged",
+    "pre-commit-mobile-app": "cd mobile-app && npx lint-staged",
+    "pre-commit-backend": "cd backend && npx lint-staged",
     "prepare": "husky install",
     "install-dev": "concurrently \"npm install\" \"cd mobile-app && npm install\"  \"cd backend && npm install\"",
     "start-dev":"concurrently \"cd backend && npm run dev\" \"cd mobile-app && npm start\""
