@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pre-commit": "cd mobile-app && npx lint-staged",
-    "prepare": "husky install "
+    "prepare": "husky install",
+    "install-dev": "concurrently \"npm install\" \"cd mobile-app && npm install\"  \"cd backend && npm install\"",
+    "start-dev":"concurrently \"cd backend && npm run dev\" \"cd mobile-app && npm start\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^9.0.11"
+    "husky": "^9.0.11",
+    "concurrently": "^8.2.2"
   },
   "husky": {
     "hooks": {
